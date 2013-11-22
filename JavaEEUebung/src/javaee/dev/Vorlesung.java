@@ -2,6 +2,7 @@ package javaee.dev;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ValueChangeEvent;
 
 @ManagedBean
 @SessionScoped
@@ -69,7 +70,7 @@ public class Vorlesung {
 				+ ", jahr=" + jahr + "]";
 	}
 
-	public String saveAction() {
-		return "";
+	public void anmeldePflichtChanged(ValueChangeEvent event) {
+		;
 	}
 }

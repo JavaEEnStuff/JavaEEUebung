@@ -19,10 +19,10 @@
 			<br />
 			<h:outputLabel value="Anmeldepflichtig: " />
 			<h:selectBooleanCheckbox value="#{vorlesung.anmeldepflichtig}"
-				onclick="this.form.submit" />
+				onclick="this.form.submit()" />
 			<br />
 			<h:outputLabel value="Maximale Teilnehmeranzahl: " />
-			<h:inputText rendered="#{vorlesung.anmeldepflichtig}"
+			<h:inputText rendered="#{!vorlesung.anmeldepflichtig}"
 				value="#{vorlesung.teilnehmerzahl}" />
 			<br />
 			<h:outputLabel value="Wintersemester: " />
