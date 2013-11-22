@@ -1,16 +1,19 @@
-package java.ee.dev;
+package javaee.dev;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
+@SessionScoped
 public class Vorlesung {
 
 	private String bezeichnung;
 	private String dozent;
 	private Integer teilnehmerzahl;
+	private boolean anmeldepflichtig;
 	private boolean ws;
 	private Integer jahr;
-	
+
 	public String getBezeichnung() {
 		return bezeichnung;
 	}
@@ -35,6 +38,14 @@ public class Vorlesung {
 		this.teilnehmerzahl = teilnehmerzahl;
 	}
 
+	public boolean isAnmeldepflichtig() {
+		return anmeldepflichtig;
+	}
+
+	public void setAnmeldepflichtig(boolean anmeldepflichtig) {
+		this.anmeldepflichtig = anmeldepflichtig;
+	}
+
 	public boolean isWs() {
 		return ws;
 	}
@@ -56,5 +67,9 @@ public class Vorlesung {
 		return "Vorlesung [bezeichnung=" + bezeichnung + ", dozent=" + dozent
 				+ ", teilnehmerzahl=" + teilnehmerzahl + ", ws=" + ws
 				+ ", jahr=" + jahr + "]";
+	}
+
+	public String saveAction() {
+		return "";
 	}
 }

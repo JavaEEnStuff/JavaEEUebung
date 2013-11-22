@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Vorlesung</title>
+</h:head>
+<h:body>
+	<h1>Vorlesung</h1>
+	<f:view>
+		<h:form>
+			<h:outputLabel value="Bezeichnung: " />
+			<h:inputText value="#{vorlesung.bezeichnung}" />
+			<br />
+
+			<h:outputLabel value="Dozent: " />
+			<h:inputText value="#{vorlesung.dozent}" />
+			<br />
+			<h:outputLabel value="Anmeldepflichtig: " />
+			<h:selectBooleanCheckbox value="#{vorlesung.anmeldepflichtig}"
+				onclick="this.form.submit" />
+			<br />
+			<h:outputLabel value="Maximale Teilnehmeranzahl: " />
+			<h:inputText rendered="#{vorlesung.anmeldepflichtig}"
+				value="#{vorlesung.teilnehmerzahl}" />
+			<br />
+			<h:outputLabel value="Wintersemester: " />
+			<h:selectBooleanCheckbox value="#{vorlesung.ws}" />
+			<br />
+			<h:outputLabel value="Jahr: " />
+			<h:inputText value="#{vorlesung.jahr}" />
+			<br />
+			<h:commandButton value="Speichern" />
+			<h:commandButton value="Zurück" action="index.html" />
+
+		</h:form>
+	</f:view>
+
+</h:body>
+</html>
