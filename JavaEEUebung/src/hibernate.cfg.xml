@@ -13,6 +13,7 @@
 		<!-- <property name="hibernate.show_sql">true</property>
 		<property name="hibernate.formate_sql">true</property> -->
 
-		<mapping class="de.htw.saarland.stl.christopher.examples.einfuehrung.model.classes.SightHibernateImpl" />
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
 	</session-factory>
 </hibernate-configuration>    
