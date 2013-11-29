@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- PostgreSQL -->
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost/jee</property>
+		<property name="hibernate.connection.username">jee</property>
+		<property name="hibernate.connection.password">jee</property>
+		<property name="current_session_context_class">thread</property>
+		<!-- <property name="hibernate.show_sql">true</property>
+		<property name="hibernate.formate_sql">true</property> -->
+
+		<mapping class="de.htw.saarland.stl.christopher.examples.einfuehrung.model.classes.SightHibernateImpl" />
+	</session-factory>
+</hibernate-configuration>    
