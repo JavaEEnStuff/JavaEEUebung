@@ -1,10 +1,26 @@
 package javaee.dev.vorlesung;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
-@Table(name="test")
 public class Test {
 
+	@Id
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Test [id=" + id + "]";
+	}
+	
+	
 }

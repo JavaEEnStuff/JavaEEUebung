@@ -4,6 +4,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ValueChangeEvent;
 
+import org.hibernate.Session;
+
 @ManagedBean
 @SessionScoped
 public class Vorlesung {
@@ -14,6 +16,27 @@ public class Vorlesung {
 	private boolean anmeldepflichtig;
 	private boolean ws;
 	private Integer jahr;
+	
+	public Vorlesung() {
+		Test test = new Test();
+		saveSight(test);
+	}
+	
+	public static void saveSight(Test test) {
+		Session session = null;
+
+		try {
+			session = HibernateUtil.getSessionFactory().getCurrentSession();
+			session.beginTransaction();
+			session.saveOrUpdate(test);
+			session.flush();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			HibernateUtil.closeSession(session);
+		}
+	}
 
 	public String getBezeichnung() {
 		return bezeichnung;
