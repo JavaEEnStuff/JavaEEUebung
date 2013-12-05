@@ -1,4 +1,6 @@
-package javaee.dev.vorlesung;
+package javaee.dev.view.vorlesung;
+
+import javaee.dev.model.HibernateUtil;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

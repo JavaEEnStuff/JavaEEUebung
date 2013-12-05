@@ -1,4 +1,4 @@
-package javaee.dev.vorlesung;
+package javaee.dev.view.vorlesung;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

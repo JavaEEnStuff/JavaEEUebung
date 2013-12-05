@@ -1,4 +1,4 @@
-package javaee.dev.vorlesung;
+package javaee.dev.model;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

@@ -11,7 +11,7 @@
 		<property name="hibernate.connection.password">jee</property>
 		<property name="current_session_context_class">thread</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
-		
-		<mapping class="javaee.dev.vorlesung.Test" />
+
+		<mapping class="javaee.dev.dao.VorlesungHibernate" />
 	</session-factory>
 </hibernate-configuration>    
