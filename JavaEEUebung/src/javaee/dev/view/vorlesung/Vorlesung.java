@@ -48,12 +48,12 @@ public class Vorlesung {
 		vorlesung.setRegistrationRequired(anmeldepflichtig);
 	}
 
-	public Integer getWs() {
-		return vorlesung.getHoursPerWeek();
+	public boolean isWs() {
+		return vorlesung.isWinterSemester();
 	}
 
-	public void setWs(Integer ws) {
-		vorlesung.setHoursPerWeek(ws);
+	public void setWs(boolean ws) {
+		vorlesung.setWinterSemester(ws);
 	}
 
 	public Integer getJahr() {

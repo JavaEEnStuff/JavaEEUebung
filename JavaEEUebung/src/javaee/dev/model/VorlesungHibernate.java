@@ -20,7 +20,7 @@ public class VorlesungHibernate {
 	private String lecturer;
 	private Integer members;
 	private boolean registrationRequired;
-	private Integer hoursPerWeek;
+	private boolean winterSemester;
 	private Integer year;
 	private String label;
 
@@ -56,12 +56,12 @@ public class VorlesungHibernate {
 		this.registrationRequired = registrationRequired;
 	}
 
-	public Integer getHoursPerWeek() {
-		return hoursPerWeek;
+	public boolean isWinterSemester() {
+		return winterSemester;
 	}
 
-	public void setHoursPerWeek(Integer hoursPerWeek) {
-		this.hoursPerWeek = hoursPerWeek;
+	public void setWinterSemester(boolean winterSemester) {
+		this.winterSemester = winterSemester;
 	}
 
 	public Integer getYear() {
@@ -82,10 +82,14 @@ public class VorlesungHibernate {
 
 	@Override
 	public String toString() {
-		return "VorlesungHibernate [id=" + id + ", lecturer=" + lecturer
-				+ ", members=" + members + ", registrationRequired="
-				+ registrationRequired + ", hoursPerWeek=" + hoursPerWeek
-				+ ", year=" + year + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("VorlesungHibernate [id=").append(id)
+				.append(", lecturer=").append(lecturer).append(", members=")
+				.append(members).append(", registrationRequired=")
+				.append(registrationRequired).append(", winterSemester=")
+				.append(winterSemester).append(", year=").append(year)
+				.append(", label=").append(label).append("]");
+		return builder.toString();
 	}
 
 }
