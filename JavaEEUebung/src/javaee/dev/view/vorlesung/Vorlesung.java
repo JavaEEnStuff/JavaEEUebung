@@ -1,5 +1,7 @@
 package javaee.dev.view.vorlesung;
 
+import javaee.dev.model.VorlesungHibernate;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ValueChangeEvent;
@@ -8,69 +10,58 @@ import javax.faces.event.ValueChangeEvent;
 @SessionScoped
 public class Vorlesung {
 
-	private String bezeichnung;
-	private String dozent;
-	private Integer teilnehmerzahl;
-	private boolean anmeldepflichtig;
-	private boolean ws;
-	private Integer jahr;
-	
+	private VorlesungHibernate vorlesung;
+
 	public Vorlesung() {
+		vorlesung = new VorlesungHibernate();
 	}
 
 	public String getBezeichnung() {
-		return bezeichnung;
+		return vorlesung.getLabel();
 	}
 
 	public void setBezeichnung(String bezeichnung) {
-		this.bezeichnung = bezeichnung;
+		vorlesung.setLabel(bezeichnung);
 	}
 
 	public String getDozent() {
-		return dozent;
+		return vorlesung.getLecturer();
 	}
 
 	public void setDozent(String dozent) {
-		this.dozent = dozent;
+		vorlesung.setLecturer(dozent);
 	}
 
 	public Integer getTeilnehmerzahl() {
-		return teilnehmerzahl;
+		return vorlesung.getMembers();
 	}
 
 	public void setTeilnehmerzahl(Integer teilnehmerzahl) {
-		this.teilnehmerzahl = teilnehmerzahl;
+		vorlesung.setMembers(teilnehmerzahl);
 	}
 
 	public boolean isAnmeldepflichtig() {
-		return anmeldepflichtig;
+		return vorlesung.isRegistrationRequired();
 	}
 
 	public void setAnmeldepflichtig(boolean anmeldepflichtig) {
-		this.anmeldepflichtig = anmeldepflichtig;
+		vorlesung.setRegistrationRequired(anmeldepflichtig);
 	}
 
-	public boolean isWs() {
-		return ws;
+	public int getWs() {
+		return vorlesung.getHoursPerWeek();
 	}
 
-	public void setWs(boolean ws) {
-		this.ws = ws;
+	public void setWs(int ws) {
+		vorlesung.setHoursPerWeek(ws);
 	}
 
 	public Integer getJahr() {
-		return jahr;
+		return vorlesung.getYear();
 	}
 
 	public void setJahr(Integer jahr) {
-		this.jahr = jahr;
-	}
-
-	@Override
-	public String toString() {
-		return "Vorlesung [bezeichnung=" + bezeichnung + ", dozent=" + dozent
-				+ ", teilnehmerzahl=" + teilnehmerzahl + ", ws=" + ws
-				+ ", jahr=" + jahr + "]";
+		vorlesung.setYear(jahr);
 	}
 
 	public void anmeldePflichtChanged(ValueChangeEvent event) {

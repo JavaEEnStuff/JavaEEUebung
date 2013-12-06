@@ -20,8 +20,9 @@ public class VorlesungHibernate {
 	private String lecturer;
 	private Integer members;
 	private boolean registrationRequired;
-	private boolean hoursPerWeek;
+	private Integer hoursPerWeek;
 	private Integer year;
+	private String label;
 
 	public int getId() {
 		return id;
@@ -55,11 +56,11 @@ public class VorlesungHibernate {
 		this.registrationRequired = registrationRequired;
 	}
 
-	public boolean isHoursPerWeek() {
+	public Integer getHoursPerWeek() {
 		return hoursPerWeek;
 	}
 
-	public void setHoursPerWeek(boolean hoursPerWeek) {
+	public void setHoursPerWeek(Integer hoursPerWeek) {
 		this.hoursPerWeek = hoursPerWeek;
 	}
 
@@ -69,6 +70,14 @@ public class VorlesungHibernate {
 
 	public void setYear(Integer year) {
 		this.year = year;
+	}
+
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	@Override
