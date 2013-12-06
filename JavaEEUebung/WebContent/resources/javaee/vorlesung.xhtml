@@ -10,30 +10,66 @@
 	<h1>Vorlesung</h1>
 	<f:view>
 		<h:form>
+			<table>
+			<tr>
+			<td>
 			<h:outputLabel value="Bezeichnung: " />
+			</td>
+			<td>
 			<h:inputText value="#{vorlesung.bezeichnung}" />
-			<br />
-
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<h:outputLabel value="Dozent: " />
+			</td>
+			<td>
 			<h:inputText value="#{vorlesung.dozent}" />
-			<br />
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<h:outputLabel value="Anmeldepflichtig: " />
+			</td>
+			<td>
 			<h:selectBooleanCheckbox value="#{vorlesung.anmeldepflichtig}"
 				onclick="this.form.submit()" />
-			<br />
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<h:outputLabel value="Maximale Teilnehmeranzahl: " />
+			</td>
+			<td>
 			<h:inputText rendered="#{!vorlesung.anmeldepflichtig}"
 				value="#{vorlesung.teilnehmerzahl}" />
-			<br />
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<h:outputLabel value="Wintersemester: " />
+			</td>
+			<td>
 			<h:selectBooleanCheckbox value="#{vorlesung.ws}" />
-			<br />
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<h:outputLabel value="Jahr: " />
+			</td>
+			<td>
 			<h:inputText value="#{vorlesung.jahr}" />
-			<br />
+			</td>
+			</tr>
+			<tr>
+			<td>
 			<h:commandButton value="Speichern" />
+			</td>
+			<td>
 			<h:commandButton value="Zurück" action="index.html" />
-
+			</td>
+			</tr>
+			</table>
 		</h:form>
 	</f:view>
 
