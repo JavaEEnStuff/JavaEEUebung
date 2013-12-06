@@ -1,5 +1,7 @@
 package javaee.dev.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "vorlesung")
-public class VorlesungHibernate {
+public class VorlesungHibernate implements Serializable {
 
 	public VorlesungHibernate() {
 	}

@@ -48,11 +48,11 @@ public class Vorlesung {
 		vorlesung.setRegistrationRequired(anmeldepflichtig);
 	}
 
-	public int getWs() {
+	public Integer getWs() {
 		return vorlesung.getHoursPerWeek();
 	}
 
-	public void setWs(int ws) {
+	public void setWs(Integer ws) {
 		vorlesung.setHoursPerWeek(ws);
 	}
 
