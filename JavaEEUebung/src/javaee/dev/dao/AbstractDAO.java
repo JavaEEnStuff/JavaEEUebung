@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javaee.dev.model.HibernateUtil;
-import javaee.dev.model.VorlesungHibernate;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 
-public class AbstractDAO<T extends Object> {
+public abstract class AbstractDAO<T extends Object> {
 
 	public void delete(T sight){
 		Session session = null;
@@ -43,8 +42,7 @@ public class AbstractDAO<T extends Object> {
 		try {
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
-			// TODO: noch nicht generisch!
-			T sight = (T)session.get(VorlesungHibernate.class, id);
+			T sight = (T)session.get(getHibernateClass(), id);
 			session.getTransaction().commit();
 			return sight;
 		}
@@ -57,6 +55,8 @@ public class AbstractDAO<T extends Object> {
 		}
 	}
 	
+	protected abstract Class getHibernateClass();
+
 	/**
 	 * Gibt alle Sehenswürdigkeiten als Liste aus der Datenbank zurück.
 	 * @return Alle Sehenswürdigkeiten.
