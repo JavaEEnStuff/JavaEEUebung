@@ -31,4 +31,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  <listener>
+    <listener-class>javaee.dev.StartupListener</listener-class>
+  </listener>
 </web-app> 

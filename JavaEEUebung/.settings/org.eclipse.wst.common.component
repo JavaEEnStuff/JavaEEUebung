@@ -2,6 +2,12 @@
     <wb-module deploy-name="JavaEEUebung">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="log4j-1.2.17.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/JavaEEUebung/lib/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="postgresql-9.2-1003.jdbc4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/JavaEEUebung/lib/postgresql-9.2-1003.jdbc4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="JavaEEUebung"/>
         <property name="java-output-path" value="/JavaEEUebung/build/classes"/>
     </wb-module>

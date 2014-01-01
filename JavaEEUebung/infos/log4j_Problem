@@ -1,0 +1,6 @@
+log4j hat beim Redeploy ein Classloader-Problem mit den statischen Logger-Objekten.
+Um das zu umgehen muss im glassfish-Ordner domain1/config die Datei domain.xml angepasst werden:
+
+<jvm-options>org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
+
+einfach dazuballern

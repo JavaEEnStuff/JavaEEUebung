@@ -1,9 +1,11 @@
 package javaee.dev.view.vorlesung;
 
 import javaee.dev.model.VorlesungHibernate;
+import javaee.dev.service.VorlesungService;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
 @ManagedBean
@@ -66,5 +68,11 @@ public class Vorlesung {
 
 	public void anmeldePflichtChanged(ValueChangeEvent event) {
 		;
+	}
+
+	public void save(ActionEvent event) {
+		System.out.println("Speichere!");
+		VorlesungService service = new VorlesungService();
+		service.saveVorlesung(vorlesung);
 	}
 }
