@@ -8,15 +8,12 @@
 		</property>
 		<property name="connection.username">jee</property>
 		<property name="connection.password">jee</property>
-		<property name="connection.driver_class">
-			org.postgresql.Driver
-		</property>
+		<property name="connection.driver_class">org.postgresql.Driver</property>
 		<property name="dialect">
 			org.hibernate.dialect.PostgreSQLDialect
 		</property>
 		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
-		<property name="current_session_context_class">thread
-		</property>
+		<property name="current_session_context_class">thread</property>
 		<property name="hibernate.transaction.factory_class">
 			org.hibernate.transaction.JDBCTransactionFactory
 		</property>

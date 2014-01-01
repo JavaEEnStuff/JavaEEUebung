@@ -15,7 +15,7 @@ public class VorlesungHibernate {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Integer id;
 
 	private String lecturer;
 	private Integer members;
@@ -24,7 +24,7 @@ public class VorlesungHibernate {
 	private Integer year;
 	private String label;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 

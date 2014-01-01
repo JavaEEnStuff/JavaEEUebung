@@ -8,13 +8,18 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
+import org.apache.log4j.Logger;
+
 @ManagedBean
 @SessionScoped
 public class Vorlesung {
 
+	private static Logger logger = Logger.getLogger(Vorlesung.class);
+
 	private VorlesungHibernate vorlesung;
 
 	public Vorlesung() {
+		logger.info("initialisiere Objekt Vorlesung");
 		vorlesung = new VorlesungHibernate();
 	}
 
@@ -71,8 +76,11 @@ public class Vorlesung {
 	}
 
 	public void save(ActionEvent event) {
-		System.out.println("Speichere!");
+		logger.info("Versuche Vorlesung zu speichern...");
 		VorlesungService service = new VorlesungService();
-		service.saveVorlesung(vorlesung);
+		if (vorlesung.getId() != null)
+			service.updateVorlesung(vorlesung);
+		else
+			service.saveVorlesung(vorlesung);
 	}
 }
