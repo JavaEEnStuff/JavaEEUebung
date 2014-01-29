@@ -46,13 +46,13 @@ public class VorlesungService {
 		}
 	}
 
-	public List<Vorlesung> loadVorlesung() {
+	public List<VorlesungHibernate> loadVorlesung() {
 		Session session = null;
 		try {
 			logger.info("Lade alle Vorlesungen!");
 			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			Transaction tx = session.beginTransaction();
-			List<Vorlesung> vorlesungen = session.createCriteria(Vorlesung.class).list();
+			List<VorlesungHibernate> vorlesungen = session.createCriteria(VorlesungHibernate.class).list();
 			logger.info("Habe Vorlesungen erhalten! " + vorlesungen.size());
 			tx.commit();
 			return vorlesungen;
@@ -61,6 +61,6 @@ public class VorlesungService {
 		} finally {
 			HibernateUtil.closeSession(session);
 		}
-		return new LinkedList<Vorlesung>();
+		return new LinkedList<VorlesungHibernate>();
 	}
 }

@@ -9,16 +9,19 @@
 <h:body>
 	<h1>Vorlesungen</h1>
 	<f:view>
-		<f:metadata>
-			<f:event type="preRenderView" listener="#{vorlesungen.loadVorlesungen}" />
-		</f:metadata>
 		<h:form>
 			<h:dataTable value="#{vorlesungen.allLectures}" var="o">
 				<h:column>
 					<!-- column header -->
-					<f:facet name="header">Order No</f:facet>
+					<f:facet name="header">Bezeichnung</f:facet>
 					<!-- row record -->
-					<h:outputText value="#{o}">macht nix </h:outputText>
+					<h:outputText value="#{o.label}">macht nix </h:outputText>
+				</h:column>
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">Dozent</f:facet>
+					<!-- row record -->
+					<h:outputText value="#{o.lecturer}">macht nix </h:outputText>
 				</h:column>
 			</h:dataTable>
 		</h:form>

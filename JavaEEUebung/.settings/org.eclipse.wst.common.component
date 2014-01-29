@@ -8,6 +8,9 @@
         <dependent-module archiveName="postgresql-9.2-1003.jdbc4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/JavaEEUebung/lib/postgresql-9.2-1003.jdbc4.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="dom4j-1.6.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/JavaEEUebung/lib/dom4j-1.6.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="JavaEEUebung"/>
         <property name="java-output-path" value="/JavaEEUebung/build/classes"/>
     </wb-module>

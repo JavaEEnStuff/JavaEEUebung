@@ -2,9 +2,10 @@ package javaee.dev.view.vorlesung;
 
 import java.util.List;
 
+import javaee.dev.model.VorlesungHibernate;
 import javaee.dev.service.VorlesungService;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ComponentSystemEvent;
 
@@ -14,18 +15,18 @@ import org.apache.log4j.Logger;
 @SessionScoped
 public class Vorlesungen {
 
-	private List<Vorlesung> allLectures;
+	public Vorlesungen(){
+	}
 
 	public void loadVorlesungen(ComponentSystemEvent event) {
-		logger.info("Lade alle Vorlesungen");
-		VorlesungService service = new VorlesungService();
-		allLectures = service.loadVorlesung();
 	}
 
 	private static final Logger logger = Logger.getLogger(Vorlesungen.class);
 
-	public List<Vorlesung> getAllLectures() {
-		return allLectures;
+	public List<VorlesungHibernate> getAllLectures() {
+		logger.info("Lade alle Vorlesungen");
+		VorlesungService service = new VorlesungService();
+		return service.loadVorlesung();
 	}
 
 	public void setAllLectures() {
